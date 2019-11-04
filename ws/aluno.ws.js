@@ -2,7 +2,7 @@ const repository = require('../repository/aluno.repository')
 
 module.exports = (app) => {
 
-    app.post('/aluno', (req, res) => {
+    app.post('/aluno/salvaAluno', (req, res) => {
         let resultPromise = repository.salvarUsuario(req.body)
         resultPromise.then(
             res.json({})
@@ -11,8 +11,8 @@ module.exports = (app) => {
         })
     })
 
-    app.get('/aluno/:usuario/:senha', (req, res) => {
-        let resultPromise = repository.login(req.param.usuario, req.param.senha)
+    app.post('/aluno/buscaAluno', (req, res) => {
+        let resultPromise = repository.login(req.body)
         resultPromise.then(
             res.json({})
         ).catch(e => {

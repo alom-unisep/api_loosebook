@@ -9,11 +9,11 @@ exports.salvarUsuario = async (alunoData) => {
     return result
 }
 
-exports.login = async (usuario, senha) => {
+exports.login = async (usuarioData) => {
     let con = await db.connect()
     let result = await Match.find({
-        usuario : usuario,
-        senha : senha
+        usuario : usuarioData.usuario,
+        senha : usuarioData.senha
     })
     con.disconnect()
     return result
