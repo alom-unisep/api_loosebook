@@ -18,7 +18,7 @@ exports.listarEscolhasPorPeriodo = async (periodo) => {
             semestre : periodo.semestre,
             etapa : periodo.etapa
         }
-    }).exec()
+    }).populate('livro').populate('aluno').exec()
 
     db.disconnect()
 
