@@ -11,7 +11,7 @@ const livroSchema = mongoose.Schema({
     imagem : String,
     professor : String,
     descricao : String,
-    idioma : Integer, //portugues: 1 -> inglês: 2
+    idioma : Number, /*portugues: 1 -> inglês: 2*/
     periodo : {
         type : SchemaTypes.ObjectId, 
         ref : 'Periodo'
